@@ -7,30 +7,30 @@
     Title="JhoelSuarezPruebaProg2">
 
     <FlyoutItem Title="Home" Icon="home.png">
-        <ShellContent ContentTemplate="{DataTemplate views:Home}" />
+        <ShellContent Route="Home" ContentTemplate="{DataTemplate views:Home}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Persona" Icon="persona.png">
-        <ShellContent ContentTemplate="{DataTemplate views:Persona}" />
+        <ShellContent Route="Persona" ContentTemplate="{DataTemplate views:Persona}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Autos" Icon="car.png">
-        <ShellContent ContentTemplate="{DataTemplate views:Autos}" />
+        <ShellContent Route="Autos" ContentTemplate="{DataTemplate views:Autos}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Civil" Icon="civil.png">
-        <ShellContent ContentTemplate="{DataTemplate views:Civil}" />
+        <ShellContent Route="Civil" ContentTemplate="{DataTemplate views:Civil}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Legal" Icon="legal.png">
-        <ShellContent ContentTemplate="{DataTemplate views:Legal}" />
+        <ShellContent Route="Legal" ContentTemplate="{DataTemplate views:Legal}" />
     </FlyoutItem>
 
     <FlyoutItem Title="SRI" Icon="sri.png">
-        <ShellContent ContentTemplate="{DataTemplate views:SRI}" />
+        <ShellContent Route="SRI" ContentTemplate="{DataTemplate views:SRI}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Solicitud" Icon="solicitud.png">
-        <ShellContent ContentTemplate="{DataTemplate views:JSuarezPag1}" />
+        <ShellContent Route="Solicitud" ContentTemplate="{DataTemplate views:JSuarezPag2}" />
     </FlyoutItem>
 </Shell>

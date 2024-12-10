@@ -4,9 +4,52 @@
              x:Class="JhoelSuarezPruebaProg2.Views.Persona"
              Title="Persona">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Ingrese el número de Cédula" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Cedula"
+        Placeholder="Ingrese Cédula"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese el nombre completo" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Nombre"
+        Placeholder="Ingrese Nombre"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese la edad" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Edad"
+        Placeholder="Ingrese Edad"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese fecha de nacimiento" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Fecha"
+        Placeholder="Ingrese fecha de nacimiento"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese Genero" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Genero"
+        Placeholder="Ingrese el Genero"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese Telefono" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Telefono"
+        Placeholder="Ingrese el Telefono"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese Correo" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Correo"
+        Placeholder="Ingrese el Correo"
+        HeightRequest="100"/>
+        
+        <Button
+        x:Name="JSuarez_btn_Recargar"
+        Text="Recargar"
+        Clicked="JSuarez_btn_Recargar_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

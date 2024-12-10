@@ -3,48 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JhoelSuarezPruebaProg2.Views.JSuarezPag2"
              Title="JSuarezPag2"
-             Background="Black">
-    
-    <Grid RowSpacing="3"
-          ColumnSpacing="3">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+            >
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <VerticalStackLayout>
 
-        <BoxView Color="White" />
-        <Label Text="Jhoel"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
 
-        <BoxView Grid.Column="1"
-                 Color="White" />
-        <Label Grid.Column="1"
-               Text="Alexander"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
 
-        <BoxView Grid.Row="1"
-                 Color="White" />
-        <Label Grid.Row="1"
-               Text="Suárez"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Style="{StaticResource JSuarezLabelStyle}"/>
-
-        <BoxView Grid.Row="1"
-                 Grid.Column="1"
-                 Color="White" />
-        <Label Grid.Row="1"
-               Grid.Column="1"
-               Text="Santander"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Style="{StaticResource JSuarezLabelStyle}"/>
-    </Grid>
+        <Label Text="El ultimo reporte fue:" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Cedula"
+            Text="{Binding Cedula}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Nombre"
+            Text="{Binding Nombre}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Edad"
+            Text="{Binding Edad}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Fecha_Nacimiento"
+            Text="{Binding Fecha_Nacimiento}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Genero"
+            Text="{Binding Genero}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Telefono"
+            Text="{Binding Telefono}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            x:Name="JSuarez_Label_Correo"
+            Text="{Binding Correo}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
 </ContentPage>

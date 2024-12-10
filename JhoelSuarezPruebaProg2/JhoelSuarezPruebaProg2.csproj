@@ -59,6 +59,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\car.png" />
 	  <None Remove="Resources\Images\cars.jpg" />
+	  <None Remove="Resources\Images\civil.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\legal.png" />
 	  <None Remove="Resources\Images\persona.png" />
