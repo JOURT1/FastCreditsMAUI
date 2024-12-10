@@ -9,30 +9,20 @@ using System.Threading.Tasks;
 
 namespace JhoelSuarezPruebaProg2.Repositories
 {
-    //Referenciar arriba en using y clic derecho sobre IJSuarez y usar interfaz generada por el IDE
-    public class JSuarezUsuarioRepository : IJSuarezUsuarioRepository
+    public class JsuarezCarroRepository : IJSCarroRepo
     {
-        //public JSuarezUsuario DevuelveInfoUsuario()
-        //{
-        //    return new JSuarezUsuario()
-        //    {
-        //        Telefono = 1,
-        //        Nombre = "Hola Mundo"
-        //    };
-        //}
-        //
-        public string _fileName = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarezUsuario.txt");
+        public string _fileName = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarezcarro.txt");
         //IMPORTANTE: Vamos a Nugget y descargamos NewtonSoftJson
-        public bool ActualizarUsuario(JSuarezUsuario usuario)
+        public bool ActualizarCarro(JSuarezCarro carro)
         {
             throw new NotImplementedException();
         }
 
-        public bool CrearUsuario(JSuarezUsuario usuario)
+        public bool CrearCarro(JSuarezCarro carro)
         {
             try
             {
-                string json_data = JsonConvert.SerializeObject(usuario);
+                string json_data = JsonConvert.SerializeObject(carro);
                 File.WriteAllText(_fileName, json_data);
                 return true;
             }
@@ -42,31 +32,30 @@ namespace JhoelSuarezPruebaProg2.Repositories
             }
         }
 
-        public JSuarezUsuario DevulveInfoUsuario(string Telefono)
+        public JSuarezCarro DevulveInfoCarro(string Marca)
         {
-            JSuarezUsuario jSuarezUsuario = new JSuarezUsuario();
+            JSuarezCarro jSuarezCarro = new JSuarezCarro();
             try
             {
                 //File.AppendAllText para que no sobre escriba y siga escribiendo
                 if (File.Exists(_fileName))
                 {
                     string json_data = File.ReadAllText(_fileName);
-                    jSuarezUsuario = JsonConvert.DeserializeObject<JSuarezUsuario>(json_data);
+                    jSuarezCarro = JsonConvert.DeserializeObject<JSuarezCarro>(json_data);
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-            return jSuarezUsuario;
+            return jSuarezCarro;
         }
-
-        public IEnumerable<JSuarezUsuario> DevulveListadoUsuarios()
+        public IEnumerable<JSuarezCarro> DevulveListadoCarro()
         {
             throw new NotImplementedException();
         }
 
-        public bool EliminarUsuario(string Telefono)
+        public bool EliminarCarro(string Marca)
         {
             throw new NotImplementedException();
         }

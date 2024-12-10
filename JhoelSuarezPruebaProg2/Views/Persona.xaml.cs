@@ -41,8 +41,7 @@ public partial class Persona : ContentPage
             await DisplayAlert("Alerta", "Guardado correctamente", "OK");
 
             // Aquí pasamos el objeto usuario a la nueva página
-            //await Navigation.PushAsync(new JSuarezPag2(usuario));
-            DatosEnviados?.Invoke(this, usuario);
+            //await Navigation.PushAsync(new JSuarezPag2(usuario, new JSuarezCarro()));
         }
         else
         {

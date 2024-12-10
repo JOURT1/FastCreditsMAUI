@@ -4,9 +4,34 @@
              x:Class="JhoelSuarezPruebaProg2.Views.Autos"
              Title="Autos">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Ingrese la Marca" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Marca"
+        Placeholder="Ingrese la Marca"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese el Modelo" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Modelo"
+        Placeholder="Ingrese el Modelo"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese el año" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Año"
+        Placeholder="Ingrese el año"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese el precio" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Precio"
+        Placeholder="Ingrese el precio"
+        HeightRequest="100"/>
+
+        <Button
+        x:Name="JSuarez_btn_Recargar"
+        Text="Guardar"
+        Clicked="JSuarez_btn_Recargar_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

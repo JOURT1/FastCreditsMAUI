@@ -48,7 +48,7 @@
         
         <Button
         x:Name="JSuarez_btn_Recargar"
-        Text="Recargar"
+        Text="Guardar"
         Clicked="JSuarez_btn_Recargar_Clicked"/>
 
     </VerticalStackLayout>

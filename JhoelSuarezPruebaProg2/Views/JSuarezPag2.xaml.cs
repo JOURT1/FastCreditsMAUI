@@ -4,11 +4,17 @@ namespace JhoelSuarezPruebaProg2.Views;
 
 public partial class JSuarezPag2 : ContentPage
 {
-	public JSuarezPag2(JSuarezUsuario usuario)
-	{
-		InitializeComponent();
-        BindingContext = usuario;
+    public JSuarezPag2(JSuarezUsuario usuario, JSuarezCarro carro)
+    {
+        InitializeComponent();
+
+        // Crear el objeto combinado y asignarlo como BindingContext
+        var datosCombinados = new JSuarezDatosCombinados
+        {
+            Usuario = usuario,
+            Carro = carro
+        };
+
+        BindingContext = datosCombinados;
     }
-
-
 }

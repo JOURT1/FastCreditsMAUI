@@ -8,6 +8,7 @@ namespace JhoelSuarezPruebaProg2.Models
 {
     public class JSuarezUsuario
     {
+        //Persona
         public string Cedula { get; set; }
         public string Nombre { get; set; }
         public string Edad { get; set; }
@@ -15,6 +16,7 @@ namespace JhoelSuarezPruebaProg2.Models
         public string Genero { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
+
 
     }
 }

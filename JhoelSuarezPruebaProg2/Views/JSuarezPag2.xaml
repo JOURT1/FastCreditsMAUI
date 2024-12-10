@@ -6,44 +6,22 @@
             >
 
     <VerticalStackLayout>
+        <!-- Datos del Usuario -->
+        <Label Text="Datos del Usuario" FontSize="Title" HorizontalOptions="Center" />
+        <Label Text="{Binding Usuario.Cedula}" />
+        <Label Text="{Binding Usuario.Nombre}" />
+        <Label Text="{Binding Usuario.Edad}" />
+        <Label Text="{Binding Usuario.Fecha_Nacimiento}" />
+        <Label Text="{Binding Usuario.Genero}" />
+        <Label Text="{Binding Usuario.Telefono}" />
+        <Label Text="{Binding Usuario.Correo}" />
 
-
-
-        <Label Text="El ultimo reporte fue:" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Cedula"
-            Text="{Binding Cedula}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Nombre"
-            Text="{Binding Nombre}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Edad"
-            Text="{Binding Edad}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Fecha_Nacimiento"
-            Text="{Binding Fecha_Nacimiento}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Genero"
-            Text="{Binding Genero}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Telefono"
-            Text="{Binding Telefono}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            x:Name="JSuarez_Label_Correo"
-            Text="{Binding Correo}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <!-- Datos del Carro -->
+        <Label Text="Datos del Carro" FontSize="Title" HorizontalOptions="Center" />
+        <Label Text="{Binding Carro.Marca}" />
+        <Label Text="{Binding Carro.Modelo}" />
+        <Label Text="{Binding Carro.Año}" />
+        <Label Text="{Binding Carro.Precio}" />
     </VerticalStackLayout>
+
 </ContentPage>
