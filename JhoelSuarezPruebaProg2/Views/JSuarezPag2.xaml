@@ -3,43 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JhoelSuarezPruebaProg2.Views.JSuarezPag2"
              Title="JSuarezPag2"
-            >
-
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ScrollView>
     <VerticalStackLayout>
         <!-- Datos del Usuario -->
-        <Label Text="Datos del Usuario" FontSize="Title" HorizontalOptions="Center" />
-        <Label Text="{Binding Usuario.Cedula}" />
-        <Label Text="{Binding Usuario.Nombre}" />
-        <Label Text="{Binding Usuario.Edad}" />
-        <Label Text="{Binding Usuario.Fecha_Nacimiento}" />
-        <Label Text="{Binding Usuario.Genero}" />
-        <Label Text="{Binding Usuario.Telefono}" />
-        <Label Text="{Binding Usuario.Correo}" />
+        <Label Text="Datos del Usuario" Style="{StaticResource HeaderLabel}" />
+        <Label Text="{Binding Usuario.Cedula}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Usuario.Nombre}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Usuario.Edad}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Usuario.Fecha_Nacimiento}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Usuario.Genero}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Usuario.Telefono}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Usuario.Correo}" Style="{StaticResource BodyLabel}" />
 
         <!-- Datos del Carro -->
-        <Label Text="Datos del Carro" FontSize="Title" HorizontalOptions="Center" />
-        <Label Text="{Binding Carro.Marca}" />
-        <Label Text="{Binding Carro.Modelo}" />
-        <Label Text="{Binding Carro.Año}" />
-        <Label Text="{Binding Carro.Precio}" />
+        <Label Text="Datos del Carro" Style="{StaticResource HeaderLabel}" />
+        <Label Text="{Binding Carro.Marca}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Carro.Modelo}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Carro.Año}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Carro.Precio}" Style="{StaticResource BodyLabel}" />
 
         <!-- Datos del Civil -->
-        <Label Text="Datos Civiles" FontSize="Title" HorizontalOptions="Center" />
-        <Label Text="{Binding Civil.Casado}" />
-        <Label Text="{Binding Civil.Hijos}" />
+        <Label Text="Datos Civiles" Style="{StaticResource HeaderLabel}" />
+        <Label Text="{Binding Civil.Casado}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Civil.Hijos}" Style="{StaticResource BodyLabel}" />
 
         <!-- Datos del Legal -->
-        <Label Text="Datos Legales" FontSize="Title" HorizontalOptions="Center" />
-        <Label Text="{Binding Legal.Denuncias}" />
-        <Label Text="{Binding Legal.Antecedentes_Penales}" />
-        <Label Text="{Binding Legal.Fraudes}" />
-        
-        <Label Text="" FontSize="Title" HorizontalOptions="Center" />
-        <Image
-                Source="valor.png"
-                Aspect="Center"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill" />
-    </VerticalStackLayout>
+        <Label Text="Datos Legales" Style="{StaticResource HeaderLabel}" />
+        <Label Text="{Binding Legal.Denuncias}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Legal.Antecedentes_Penales}" Style="{StaticResource BodyLabel}" />
+        <Label Text="{Binding Legal.Fraudes}" Style="{StaticResource BodyLabel}" />
 
+        <Image Source="valor.png" Aspect="Center" HorizontalOptions="Fill" VerticalOptions="Fill" />
+    </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>

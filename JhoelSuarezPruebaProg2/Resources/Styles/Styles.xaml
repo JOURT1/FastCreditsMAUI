@@ -438,4 +438,60 @@
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="FontSize" Value="15" />
     </Style>
+
+    <!-- Colores -->
+    <Color x:Key="PrimaryColor">#1B2A4A</Color>
+    <Color x:Key="SecondaryColor">#747474</Color>
+    <Color x:Key="AccentColor">#4CAF50</Color>
+    <Color x:Key="BackgroundColor">#F8F9FB</Color>
+
+    <!-- Estilo para Labels -->
+    <Style TargetType="Label" x:Key="HeaderLabel">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="0,10" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="SubtitleLabel">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="BodyLabel">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="#4A4A4A" />
+        <Setter Property="LineHeight" Value="1.5" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- Estilo ingreso de datos -->
+    <Style TargetType="Editor" x:Key="InputEditor">
+        <Setter Property="BackgroundColor" Value="LightPink" />
+        <Setter Property="TextColor" Value="#333333" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="Margin" Value="0,5" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource SecondaryColor}" />
+    </Style>
+
+    <!-- Estilo para Botones -->
+    <Style TargetType="Button" x:Key="PrimaryButton">
+        <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="Margin" Value="10,20" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="LeftBoldLabel">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="#333333" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+
 </ResourceDictionary>

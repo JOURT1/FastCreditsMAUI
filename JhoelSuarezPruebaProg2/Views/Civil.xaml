@@ -2,24 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JhoelSuarezPruebaProg2.Views.Civil"
-             Title="Civil">
+             Title="Civil"
+             BackgroundColor="{StaticResource BackgroundColor}">
     <VerticalStackLayout>
-        <Label Text="Ingrese si es Casado" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Casado"
-        Placeholder="Ingrese si es Casado"
-        HeightRequest="100"/>
+        <Label Text="Ingrese si es Casado" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Casado" Placeholder="Ingrese si es Casado" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese cantidad de Hijos" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Hijos"
-        Placeholder="Ingrese cantidad de Hijos"
-        HeightRequest="100"/>
+        <Label Text="Ingrese cantidad de Hijos" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Hijos" Placeholder="Ingrese cantidad de Hijos" Style="{StaticResource InputEditor}" />
 
-        <Button
-        x:Name="JSuarez_btn_Recargar"
-        Text="Guardar"
-        Clicked="JSuarez_btn_Recargar_Clicked"/>
-
+        <Button x:Name="JSuarez_btn_Recargar" Text="Guardar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

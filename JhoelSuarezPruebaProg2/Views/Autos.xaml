@@ -2,36 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JhoelSuarezPruebaProg2.Views.Autos"
-             Title="Autos">
+             Title="Autos"
+             BackgroundColor="{StaticResource BackgroundColor}">
     <VerticalStackLayout>
-        <Label Text="Ingrese la Marca" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Marca"
-        Placeholder="Ingrese la Marca"
-        HeightRequest="100"/>
+        <Label Text="Ingrese la Marca" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Marca" Placeholder="Ingrese la Marca" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese el Modelo" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Modelo"
-        Placeholder="Ingrese el Modelo"
-        HeightRequest="100"/>
+        <Label Text="Ingrese el Modelo" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Modelo" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese el año" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Año"
-        Placeholder="Ingrese el año"
-        HeightRequest="100"/>
+        <Label Text="Ingrese el año" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Año" Placeholder="Ingrese el año" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese el precio" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Precio"
-        Placeholder="Ingrese el precio"
-        HeightRequest="100"/>
+        <Label Text="Ingrese el precio" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Precio" Placeholder="Ingrese el precio" Style="{StaticResource InputEditor}" />
 
-        <Button
-        x:Name="JSuarez_btn_Recargar"
-        Text="Guardar"
-        Clicked="JSuarez_btn_Recargar_Clicked"/>
-
+        <Button x:Name="JSuarez_btn_Recargar" Text="Guardar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

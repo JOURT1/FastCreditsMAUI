@@ -2,38 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JhoelSuarezPruebaProg2.Views.Legal"
-             Title="Legal">
+             Title="Legal"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ScrollView>
     <VerticalStackLayout>
-        <Label Text="Ingrese si tiene Denuncias" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Denuncias"
-        Placeholder="Ingrese si tiene Denuncias"
-        HeightRequest="100"/>
+        <Label Text="Ingrese si tiene Denuncias" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Denuncias" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese si tiene Antecedentes Penales" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Antecedentes"
-        Placeholder="Ingrese si tiene Antecedentes Penales"
-        HeightRequest="100"/>
+        <Label Text="Ingrese si tiene Antecedentes Penales" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Antecedentes" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese si tiene Fraudes" FontSize="Subtitle" HorizontalOptions="Center" />
-        <Editor
-        x:Name="Editor_Fraudes"
-        Placeholder="Ingrese si tiene Fraudes"
-        HeightRequest="100"/>
+        <Label Text="Ingrese si tiene Fraudes" Style="{StaticResource SubtitleLabel}" />
+        <Editor x:Name="Editor_Fraudes" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEditor}" />
 
-        <Button
-        x:Name="JSuarez_btn_Recargar"
-        Text="Guardar"
-        Clicked="JSuarez_btn_Recargar_Clicked"/>
-
-        <Label Text="" FontSize="Title" HorizontalOptions="Center" />
-        <Label Text="SOLICITUD" FontSize="Subtitle" HorizontalOptions="Center" />
-        
-        <Button
-        x:Name="JSuarez_btn_Solicitud"
-        Text="Generar Solicitud"
-        Clicked="JSuarez_btn_Solicitud_Clicked"/>
-
+        <Button x:Name="JSuarez_btn_Recargar" Text="Guardar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
+        <Label Text="SOLICITUD" Style="{StaticResource SubtitleLabel}" />
+        <Button x:Name="JSuarez_btn_Solicitud" Text="Generar Solicitud" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Solicitud_Clicked" />
     </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>

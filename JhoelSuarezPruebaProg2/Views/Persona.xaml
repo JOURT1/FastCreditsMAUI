@@ -2,56 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JhoelSuarezPruebaProg2.Views.Persona"
-             Title="Persona">
+            Title="Persona"
+            BackgroundColor="{StaticResource BackgroundColor}">
     <ScrollView>
-        <VerticalStackLayout>
-            <Label Text="Ingrese el número de Cédula" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Cedula"
-            Placeholder="Ingrese Cédula"
-            HeightRequest="100"/>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Ingrese el número de Cédula" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Cedula" Placeholder="Ingrese Cédula" Style="{StaticResource InputEditor}" />
 
-            <Label Text="Ingrese el nombre completo" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Nombre"
-            Placeholder="Ingrese Nombre"
-            HeightRequest="100"/>
+            <Label Text="Ingrese el nombre completo" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Nombre" Placeholder="Ingrese Nombre" Style="{StaticResource InputEditor}" />
 
-            <Label Text="Ingrese la edad" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Edad"
-            Placeholder="Ingrese Edad"
-            HeightRequest="100"/>
+            <Label Text="Ingrese la edad" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Edad" Placeholder="Ingrese Edad" Style="{StaticResource InputEditor}" />
 
-            <Label Text="Ingrese fecha de nacimiento" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Fecha"
-            Placeholder="Ingrese fecha de nacimiento"
-            HeightRequest="100"/>
+            <Label Text="Ingrese fecha de nacimiento" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Fecha" Placeholder="Ingrese fecha de nacimiento" Style="{StaticResource InputEditor}" />
 
-            <Label Text="Ingrese Genero" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Genero"
-            Placeholder="Ingrese el Genero"
-            HeightRequest="100"/>
+            <Label Text="Ingrese Género" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Genero" Placeholder="Ingrese el Género" Style="{StaticResource InputEditor}" />
 
-            <Label Text="Ingrese Telefono" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Telefono"
-            Placeholder="Ingrese el Telefono"
-            HeightRequest="100"/>
+            <Label Text="Ingrese Teléfono" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Telefono" Placeholder="Ingrese el Teléfono" Style="{StaticResource InputEditor}" />
 
-            <Label Text="Ingrese Correo" FontSize="Subtitle" HorizontalOptions="Center" />
-            <Editor
-            x:Name="Editor_Correo"
-            Placeholder="Ingrese el Correo"
-            HeightRequest="100"/>
-        
-            <Button
-            x:Name="JSuarez_btn_Recargar"
-            Text="Guardar"
-            Clicked="JSuarez_btn_Recargar_Clicked"/>
+            <Label Text="Ingrese Correo" Style="{StaticResource SubtitleLabel}" />
+            <Editor x:Name="Editor_Correo" Placeholder="Ingrese el Correo" Style="{StaticResource InputEditor}" />
 
+            <Button x:Name="JSuarez_btn_Recargar" Text="Recargar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
