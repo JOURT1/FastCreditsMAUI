@@ -22,6 +22,11 @@
         <Label Text="{Binding Carro.Modelo}" />
         <Label Text="{Binding Carro.Año}" />
         <Label Text="{Binding Carro.Precio}" />
+
+        <!-- Datos del Civil -->
+        <Label Text="Datos Civiles" FontSize="Title" HorizontalOptions="Center" />
+        <Label Text="{Binding Civil.Casado}" />
+        <Label Text="{Binding Civil.Hijos}" />
     </VerticalStackLayout>
 
 </ContentPage>

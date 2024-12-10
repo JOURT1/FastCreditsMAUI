@@ -33,11 +33,8 @@ public partial class Autos : ContentPage
 
         if (guardar)
         {
-            // Recuperar el usuario previamente registrado
-            var usuario = _jSuarezUsuarioRepository.DevulveInfoUsuario("");
+            await DisplayAlert("Alerta", "Guardado correctamente", "OK");
 
-            // Navegar pasando ambos objetos
-            await Navigation.PushAsync(new JSuarezPag2(usuario, carro));
         }
         else
         {

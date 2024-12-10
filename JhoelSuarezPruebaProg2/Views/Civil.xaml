@@ -4,9 +4,22 @@
              x:Class="JhoelSuarezPruebaProg2.Views.Civil"
              Title="Civil">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Ingrese si es Casado" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Casado"
+        Placeholder="Ingrese si es Casado"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese cantidad de Hijos" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Hijos"
+        Placeholder="Ingrese cantidad de Hijos"
+        HeightRequest="100"/>
+
+        <Button
+        x:Name="JSuarez_btn_Recargar"
+        Text="Guardar"
+        Clicked="JSuarez_btn_Recargar_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>
