@@ -26,11 +26,11 @@
         <ShellContent Route="Legal" ContentTemplate="{DataTemplate views:Legal}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="SRI" Icon="sri.png">
+    <!--<FlyoutItem Title="SRI" Icon="sri.png">
         <ShellContent Route="SRI" ContentTemplate="{DataTemplate views:SRI}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Solicitud" Icon="solicitud.png">
         <ShellContent Route="Solicitud" ContentTemplate="{DataTemplate views:JSuarezPag2}" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 </Shell>

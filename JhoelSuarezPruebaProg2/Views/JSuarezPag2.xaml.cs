@@ -4,7 +4,7 @@ namespace JhoelSuarezPruebaProg2.Views;
 
 public partial class JSuarezPag2 : ContentPage
 {
-    public JSuarezPag2(JSuarezUsuario usuario, JSuarezCarro carro, JSuarezCivil civil)
+    public JSuarezPag2(JSuarezUsuario usuario, JSuarezCarro carro, JSuarezCivil civil,JSuarezLegal legal)
     {
         InitializeComponent();
 
@@ -13,7 +13,8 @@ public partial class JSuarezPag2 : ContentPage
         {
             Usuario = usuario,
             Carro = carro,
-            Civil = civil
+            Civil = civil,
+            Legal = legal
         };
 
         BindingContext = datosCombinados;

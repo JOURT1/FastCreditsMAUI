@@ -66,6 +66,7 @@
 	  <None Remove="Resources\Images\solicitud.png" />
 	  <None Remove="Resources\Images\sri.png" />
 	  <None Remove="Resources\Images\telefono.png" />
+	  <None Remove="Resources\Images\valor.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -83,9 +84,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Home.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\JSuarezPag1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\JSuarezPag2.xaml">

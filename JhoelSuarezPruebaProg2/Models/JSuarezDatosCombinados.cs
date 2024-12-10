@@ -11,5 +11,6 @@ namespace JhoelSuarezPruebaProg2.Models
         public JSuarezUsuario Usuario { get; set; }
         public JSuarezCarro Carro { get; set; }
         public JSuarezCivil Civil { get; set; }
+        public JSuarezLegal Legal { get; set; }
     }
 }

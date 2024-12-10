@@ -27,6 +27,19 @@
         <Label Text="Datos Civiles" FontSize="Title" HorizontalOptions="Center" />
         <Label Text="{Binding Civil.Casado}" />
         <Label Text="{Binding Civil.Hijos}" />
+
+        <!-- Datos del Legal -->
+        <Label Text="Datos Legales" FontSize="Title" HorizontalOptions="Center" />
+        <Label Text="{Binding Legal.Denuncias}" />
+        <Label Text="{Binding Legal.Antecedentes_Penales}" />
+        <Label Text="{Binding Legal.Fraudes}" />
+        
+        <Label Text="" FontSize="Title" HorizontalOptions="Center" />
+        <Image
+                Source="valor.png"
+                Aspect="Center"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill" />
     </VerticalStackLayout>
 
 </ContentPage>

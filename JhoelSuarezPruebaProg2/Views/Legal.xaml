@@ -4,9 +4,36 @@
              x:Class="JhoelSuarezPruebaProg2.Views.Legal"
              Title="Legal">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Ingrese si tiene Denuncias" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Denuncias"
+        Placeholder="Ingrese si tiene Denuncias"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese si tiene Antecedentes Penales" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Antecedentes"
+        Placeholder="Ingrese si tiene Antecedentes Penales"
+        HeightRequest="100"/>
+
+        <Label Text="Ingrese si tiene Fraudes" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Fraudes"
+        Placeholder="Ingrese si tiene Fraudes"
+        HeightRequest="100"/>
+
+        <Button
+        x:Name="JSuarez_btn_Recargar"
+        Text="Guardar"
+        Clicked="JSuarez_btn_Recargar_Clicked"/>
+
+        <Label Text="" FontSize="Title" HorizontalOptions="Center" />
+        <Label Text="SOLICITUD" FontSize="Subtitle" HorizontalOptions="Center" />
+        
+        <Button
+        x:Name="JSuarez_btn_Solicitud"
+        Text="Generar Solicitud"
+        Clicked="JSuarez_btn_Solicitud_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

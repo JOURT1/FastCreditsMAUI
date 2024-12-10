@@ -37,14 +37,7 @@ public partial class Civil : ContentPage
 
         if (guardar)
         {
-            // Recuperar el usuario previamente registrado
-            var usuario = _jSuarezUsuarioRepository.DevulveInfoUsuario("");
-
-            // Recuperar el carro previamente registrado
-            var carro = _jSuarezCarroRepository.DevulveInfoCarro("");
-
-            // Navegar a la página JSuarezPag2 pasando los tres objetos
-            await Navigation.PushAsync(new JSuarezPag2(usuario, carro, civil));
+            await DisplayAlert("Alerta", "Guardado correctamente", "OK");
         }
         else
         {
