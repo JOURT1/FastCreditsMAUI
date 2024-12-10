@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="JhoelSuarezPruebaProg2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:JhoelSuarezPruebaProg2.Views"
+    Title="JhoelSuarezPruebaProg2">
+
+    <FlyoutItem Title="Home" Icon="home.png">
+        <ShellContent ContentTemplate="{DataTemplate views:Home}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Persona" Icon="persona.png">
+        <ShellContent ContentTemplate="{DataTemplate views:Persona}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Autos" Icon="car.png">
+        <ShellContent ContentTemplate="{DataTemplate views:Autos}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Civil" Icon="civil.png">
+        <ShellContent ContentTemplate="{DataTemplate views:Civil}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Legal" Icon="legal.png">
+        <ShellContent ContentTemplate="{DataTemplate views:Legal}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="SRI" Icon="sri.png">
+        <ShellContent ContentTemplate="{DataTemplate views:SRI}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Solicitud" Icon="solicitud.png">
+        <ShellContent ContentTemplate="{DataTemplate views:JSuarezPag1}" />
+    </FlyoutItem>
+</Shell>

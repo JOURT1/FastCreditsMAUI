@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JhoelSuarezPruebaProg2.Views.JSuarezPag2"
+             Title="JSuarezPag2"
+             Background="Black">
+    
+    <Grid RowSpacing="3"
+          ColumnSpacing="3">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <BoxView Color="White" />
+        <Label Text="Jhoel"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <BoxView Grid.Column="1"
+                 Color="White" />
+        <Label Grid.Column="1"
+               Text="Alexander"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <BoxView Grid.Row="1"
+                 Color="White" />
+        <Label Grid.Row="1"
+               Text="Suárez"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Style="{StaticResource JSuarezLabelStyle}"/>
+
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="White" />
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Santander"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Style="{StaticResource JSuarezLabelStyle}"/>
+    </Grid>
+</ContentPage>

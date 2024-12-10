@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JhoelSuarezPruebaProg2.Views.Autos"
+             Title="Autos">
+    <VerticalStackLayout>
+        <Label Text="Ingrese el número de Cédula" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Cedula"
+        Placeholder="Ingrese Cédula"
+        HeightRequest="100"/>
+        
+        <Label Text="Ingrese el nombre completo" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Editor
+        x:Name="Editor_Nombre"
+        Placeholder="Ingrese Nombre"
+        HeightRequest="100"/>
+
+        <Label Text="La última recarga realizada fue:" FontSize="Subtitle" HorizontalOptions="Center" />
+        <Label 
+        x:Name="JSuarez_Label_Telefono"
+        Text="{Binding Telefono}"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Label 
+        x:Name="JSuarez_Label_Nombre"
+        Text="{Binding Nombre}"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Button
+        x:Name="JSuarez_btn_Recargar"
+        Text="Recargar"
+        Clicked="JSuarez_btn_Recargar_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
