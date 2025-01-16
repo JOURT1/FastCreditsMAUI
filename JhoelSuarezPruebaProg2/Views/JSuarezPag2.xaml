@@ -37,6 +37,8 @@
         <Label Text="" Style="{StaticResource BodyLabel}" />
         
         <Image Source="valor.png" Aspect="Center" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        
+        <Label Text="" Style="{StaticResource BodyLabel}" />
     </VerticalStackLayout>
         </ScrollView>
 </ContentPage>
