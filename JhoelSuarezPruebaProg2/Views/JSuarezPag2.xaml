@@ -16,7 +16,7 @@
         <Label Text="{Binding Usuario.Telefono}" Style="{StaticResource BodyLabel}" />
         <Label Text="{Binding Usuario.Correo}" Style="{StaticResource BodyLabel}" />
 
-        <!-- Datos del Carro -->
+        <!-- Datos del Carro-->
         <Label Text="Datos del Carro" Style="{StaticResource HeaderLabel}" />
         <Label Text="{Binding Carro.Marca}" Style="{StaticResource BodyLabel}" />
         <Label Text="{Binding Carro.Modelo}" Style="{StaticResource BodyLabel}" />
@@ -34,6 +34,8 @@
         <Label Text="{Binding Legal.Antecedentes_Penales}" Style="{StaticResource BodyLabel}" />
         <Label Text="{Binding Legal.Fraudes}" Style="{StaticResource BodyLabel}" />
 
+        <Label Text="" Style="{StaticResource BodyLabel}" />
+        
         <Image Source="valor.png" Aspect="Center" HorizontalOptions="Fill" VerticalOptions="Fill" />
     </VerticalStackLayout>
         </ScrollView>

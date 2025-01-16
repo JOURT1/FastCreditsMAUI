@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:JhoelSuarezPruebaProg2.ViewModels"
              x:Class="JhoelSuarezPruebaProg2.Views.Home"
              Title="FastCredits"
              BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+
     <ScrollView>
         <VerticalStackLayout Padding="20,40" Spacing="25">
-            <Label Text="Bienvenido a FastCredits" Style="{StaticResource HeaderLabel}" />
-            <Label Text="Tu camino hacia el auto de tus sueños comienza aquí" Style="{StaticResource SubtitleLabel}" />
+            <Label Text="{Binding WelcomeMessage}" Style="{StaticResource HeaderLabel}" />
+            <Label Text="{Binding DescriptionMessage}" Style="{StaticResource SubtitleLabel}" />
 
             <Frame CornerRadius="15" BorderColor="#E0E0E0" BackgroundColor="White" HasShadow="True" Padding="0" Margin="10">
                 <Image Source="cars.jpg" Aspect="AspectFill" />

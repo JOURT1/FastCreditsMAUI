@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:JhoelSuarezPruebaProg2.ViewModels"
              x:Class="JhoelSuarezPruebaProg2.Views.Legal"
              Title="Legal"
              BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:LegalViewModel />
+    </ContentPage.BindingContext>
+
     <ScrollView>
-    <VerticalStackLayout>
-        <Label Text="Ingrese si tiene Denuncias" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Denuncias" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEditor}" />
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Ingrese si tiene Denuncias" Style="{StaticResource SubtitleLabel}" />
+            <Editor Text="{Binding Legal.Denuncias}" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese si tiene Antecedentes Penales" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Antecedentes" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEditor}" />
+            <Label Text="Ingrese si tiene Antecedentes Penales" Style="{StaticResource SubtitleLabel}" />
+            <Editor Text="{Binding Legal.Antecedentes_Penales}" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEditor}" />
 
-        <Label Text="Ingrese si tiene Fraudes" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Fraudes" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEditor}" />
+            <Label Text="Ingrese si tiene Fraudes" Style="{StaticResource SubtitleLabel}" />
+            <Editor Text="{Binding Legal.Fraudes}" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEditor}" />
 
-        <Button x:Name="JSuarez_btn_Recargar" Text="Guardar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
-        <Label Text="SOLICITUD" Style="{StaticResource SubtitleLabel}" />
-        <Button x:Name="JSuarez_btn_Solicitud" Text="Generar Solicitud" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Solicitud_Clicked" />
-    </VerticalStackLayout>
-        </ScrollView>
+            <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
+            <Label Text="SOLICITUD" Style="{StaticResource SubtitleLabel}" />
+            <Button Text="Generar Solicitud" Command="{Binding GenerarSolicitudCommand}" Style="{StaticResource PrimaryButton}" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

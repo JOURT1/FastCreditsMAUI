@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:JhoelSuarezPruebaProg2.ViewModels"
              x:Class="JhoelSuarezPruebaProg2.Views.Autos"
              Title="Autos"
              BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:AutosViewModel />
+    </ContentPage.BindingContext>
+
     <VerticalStackLayout>
         <Label Text="Ingrese la Marca" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Marca" Placeholder="Ingrese la Marca" Style="{StaticResource InputEditor}" />
+        <Editor Text="{Binding Marca}" Placeholder="Ingrese la Marca" Style="{StaticResource InputEditor}" />
 
         <Label Text="Ingrese el Modelo" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Modelo" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEditor}" />
+        <Editor Text="{Binding Modelo}" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEditor}" />
 
         <Label Text="Ingrese el año" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Año" Placeholder="Ingrese el año" Style="{StaticResource InputEditor}" />
+        <Editor Text="{Binding Año}" Placeholder="Ingrese el año" Style="{StaticResource InputEditor}" />
 
         <Label Text="Ingrese el precio" Style="{StaticResource SubtitleLabel}" />
-        <Editor x:Name="Editor_Precio" Placeholder="Ingrese el precio" Style="{StaticResource InputEditor}" />
+        <Editor Text="{Binding Precio}" Placeholder="Ingrese el precio" Style="{StaticResource InputEditor}" />
 
         <Button x:Name="JSuarez_btn_Recargar" Text="Guardar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
     </VerticalStackLayout>
