@@ -25,10 +25,10 @@
             <Label Text="¿Por qué elegir FastCredits?" Style="{StaticResource HeaderLabel}" />
 
             <VerticalStackLayout Spacing="20">
-                <Label Text="✓ Procesos rápidos y 100% en línea" Style="{StaticResource LeftBoldLabel}" />
-                <Label Text="✓ Tasas competitivas y personalizadas" Style="{StaticResource LeftBoldLabel}" />
-                <Label Text="✓ Sin trámites complejos" Style="{StaticResource LeftBoldLabel}" />
-                <Label Text="✓ Atención personalizada" Style="{StaticResource LeftBoldLabel}" />
+                <Label Text="✓ Procesos rápidos y 100% en línea" Style="{StaticResource BodyLabel}" />
+                <Label Text="✓ Tasas competitivas y personalizadas" Style="{StaticResource BodyLabel}" />
+                <Label Text="✓ Sin trámites complejos" Style="{StaticResource BodyLabel}" />
+                <Label Text="✓ Atención personalizada" Style="{StaticResource BodyLabel}" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
