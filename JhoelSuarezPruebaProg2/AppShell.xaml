@@ -33,5 +33,4 @@
     <FlyoutItem Title="Datos Persona API" Icon="agg2.png">
         <ShellContent Route="DatosPersonaPage" ContentTemplate="{DataTemplate views:DatosPersonaPage}" />
     </FlyoutItem>
-
 </Shell>
