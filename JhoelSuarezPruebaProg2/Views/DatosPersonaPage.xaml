@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JhoelSuarezPruebaProg2.Views.DatosPersonaPage"
+             Title="Datos de Persona"
+             BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,40" Spacing="20">
+            <Label Text="Lista de Personas Registradas" Style="{StaticResource HeaderLabel}" />
+
+            <ListView ItemsSource="{Binding Personas}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="Gray" Padding="10" CornerRadius="5">
+                                <StackLayout>
+                                    <Label Text="{Binding Nombre}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="Cédula: " FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Cedula}" FontSize="14"/>
+                                    <Label Text="Edad: " FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Edad}" FontSize="14"/>
+                                    <Label Text="Fecha de Nacimiento: " FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Fecha_Nacimiento, StringFormat='{0:dd/MM/yyyy}'}" FontSize="14"/>
+                                    <Label Text="Género: " FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Genero}" FontSize="14"/>
+                                    <Label Text="Teléfono: " FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Telefono}" FontSize="14"/>
+                                    <Label Text="Correo: " FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Correo}" FontSize="14" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Actualizar" Command="{Binding CargarPersonasCommand}" Style="{StaticResource PrimaryButton}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

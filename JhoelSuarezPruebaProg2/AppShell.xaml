@@ -26,4 +26,12 @@
         <ShellContent Route="Legal" ContentTemplate="{DataTemplate views:Legal}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Agregar Persona API" Icon="agg.png">
+        <ShellContent Route="AgregarPersonaPage" ContentTemplate="{DataTemplate views:AgregarPersonaPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Datos Persona API" Icon="agg2.png">
+        <ShellContent Route="DatosPersonaPage" ContentTemplate="{DataTemplate views:DatosPersonaPage}" />
+    </FlyoutItem>
+
 </Shell>
