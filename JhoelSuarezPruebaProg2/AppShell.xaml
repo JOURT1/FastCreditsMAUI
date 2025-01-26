@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:JhoelSuarezPruebaProg2.Views"
-    Title="JhoelSuarezPruebaProg2">
+    Title="Fast Credits">
 
     <FlyoutItem Title="Home" Icon="home.png">
         <ShellContent Route="Home" ContentTemplate="{DataTemplate views:Home}" />
@@ -26,6 +26,10 @@
         <ShellContent Route="Legal" ContentTemplate="{DataTemplate views:Legal}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Generar Reporte" Icon="reporte.png">
+        <ShellContent ContentTemplate="{DataTemplate views:Reporte}" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Agregar Persona API" Icon="agg.png">
         <ShellContent Route="AgregarPersonaPage" ContentTemplate="{DataTemplate views:AgregarPersonaPage}" />
     </FlyoutItem>
@@ -34,7 +38,5 @@
         <ShellContent Route="DatosPersonaPage" ContentTemplate="{DataTemplate views:DatosPersonaPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Generar Reporte" >
-        <ShellContent ContentTemplate="{DataTemplate views:Reporte}" />
-    </FlyoutItem>
+    
 </Shell>
