@@ -1,74 +1,100 @@
 ﻿using JhoelSuarezPruebaProg2.Interfaces;
 using JhoelSuarezPruebaProg2.Models;
-using Newtonsoft.Json;
-using System;
+using SQLite;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace JhoelSuarezPruebaProg2.Repositories
 {
-    //Referenciar arriba en using y clic derecho sobre IJSuarez y usar interfaz generada por el IDE
     public class JSuarezUsuarioRepository : IJSuarezUsuarioRepository
     {
-        //public JSuarezUsuario DevuelveInfoUsuario()
-        //{
-        //    return new JSuarezUsuario()
-        //    {
-        //        Telefono = 1,
-        //        Nombre = "Hola Mundo"
-        //    };
-        //}
-        //
-        public string _fileName = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarezUsuario.txt");
-        //IMPORTANTE: Vamos a Nugget y descargamos NewtonSoftJson
-        public bool ActualizarUsuario(JSuarezUsuario usuario)
+        private readonly SQLiteConnection _database;
+
+        public JSuarezUsuarioRepository(string dbPath)
         {
-            throw new NotImplementedException();
+            _database = new SQLiteConnection(dbPath);
+            _database.CreateTable<JSuarezUsuario>();
         }
 
         public bool CrearUsuario(JSuarezUsuario usuario)
         {
             try
             {
-                string json_data = JsonConvert.SerializeObject(usuario);
-                File.WriteAllText(_fileName, json_data);
-                return true;
+                int result = _database.Insert(usuario);
+                Debug.WriteLine($"CrearUsuario: Insert result = {result}");
+                return result > 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine($"CrearUsuario: Exception = {ex.Message}");
+                return false;
             }
         }
 
-        public JSuarezUsuario DevulveInfoUsuario(string Telefono)
+        public bool ActualizarUsuario(JSuarezUsuario usuario)
         {
-            JSuarezUsuario jSuarezUsuario = new JSuarezUsuario();
             try
             {
-                //File.AppendAllText para que no sobre escriba y siga escribiendo
-                if (File.Exists(_fileName))
-                {
-                    string json_data = File.ReadAllText(_fileName);
-                    jSuarezUsuario = JsonConvert.DeserializeObject<JSuarezUsuario>(json_data);
-                }
+                int result = _database.Update(usuario);
+                Debug.WriteLine($"ActualizarUsuario: Update result = {result}");
+                return result > 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine($"ActualizarUsuario: Exception = {ex.Message}");
+                return false;
             }
-            return jSuarezUsuario;
-        }
-
-        public IEnumerable<JSuarezUsuario> DevulveListadoUsuarios()
-        {
-            throw new NotImplementedException();
         }
 
         public bool EliminarUsuario(string Telefono)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var usuario = _database.Table<JSuarezUsuario>().FirstOrDefault(u => u.Telefono == Telefono);
+                if (usuario != null)
+                {
+                    int result = _database.Delete(usuario);
+                    Debug.WriteLine($"EliminarUsuario: Delete result = {result}");
+                    return result > 0;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"EliminarUsuario: Exception = {ex.Message}");
+                return false;
+            }
+        }
+
+        public IEnumerable<JSuarezUsuario> DevulveListadoUsuarios()
+        {
+            try
+            {
+                var usuarios = _database.Table<JSuarezUsuario>().ToList();
+                Debug.WriteLine($"DevulveListadoUsuarios: Count = {usuarios.Count}");
+                return usuarios;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveListadoUsuarios: Exception = {ex.Message}");
+                return Enumerable.Empty<JSuarezUsuario>();
+            }
+        }
+
+        public JSuarezUsuario DevulveInfoUsuario(string cedula)
+        {
+            try
+            {
+                var usuario = _database.Table<JSuarezUsuario>().FirstOrDefault(u => u.Cedula == cedula);
+                Debug.WriteLine($"DevulveInfoUsuario: Usuario = {usuario?.Nombre}");
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveInfoUsuario: Exception = {ex.Message}");
+                return null;
+            }
         }
     }
 }

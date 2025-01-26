@@ -3,6 +3,8 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using JhoelSuarezPruebaProg2.Models;
 using JhoelSuarezPruebaProg2.Repositories;
+using System.IO;
+using System.Diagnostics;
 
 namespace JhoelSuarezPruebaProg2.ViewModels
 {
@@ -25,13 +27,15 @@ namespace JhoelSuarezPruebaProg2.ViewModels
 
         public PersonaViewModel()
         {
-            _usuarioRepository = new JSuarezUsuarioRepository();
-            Usuario = _usuarioRepository.DevulveInfoUsuario(string.Empty);
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarez.db3");
+            _usuarioRepository = new JSuarezUsuarioRepository(dbPath);
+            Usuario = new JSuarezUsuario(); // Inicializar un nuevo usuario
             GuardarCommand = new Command(OnGuardar);
         }
 
         private async void OnGuardar()
         {
+            Debug.WriteLine($"OnGuardar: Usuario = {Usuario.Nombre}, {Usuario.Telefono}");
             bool guardado = _usuarioRepository.CrearUsuario(Usuario);
 
             if (guardado)

@@ -12,18 +12,20 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Legal.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
+
             <Label Text="Ingrese si tiene Denuncias" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Legal.Denuncias}" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Legal.Denuncias}" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese si tiene Antecedentes Penales" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Legal.Antecedentes_Penales}" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Legal.Antecedentes_Penales}" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese si tiene Fraudes" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Legal.Fraudes}" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Legal.Fraudes}" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEntry}" />
 
             <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
-            <Label Text="SOLICITUD" Style="{StaticResource SubtitleLabel}" />
-            <Button Text="Generar Solicitud" Command="{Binding GenerarSolicitudCommand}" Style="{StaticResource PrimaryButton}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
+

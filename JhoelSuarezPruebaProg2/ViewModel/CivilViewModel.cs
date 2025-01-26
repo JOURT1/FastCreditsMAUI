@@ -1,36 +1,24 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using JhoelSuarezPruebaProg2.Models;
 using JhoelSuarezPruebaProg2.Repositories;
-using System.Windows.Input;
-using JhoelSuarezPruebaProg2.Interfaces;
-
+using System.IO;
+using System.Diagnostics;
 
 namespace JhoelSuarezPruebaProg2.ViewModels
 {
     public class CivilViewModel : INotifyPropertyChanged
     {
-        private readonly IJSCivilRepo _jsuarezCivilRepository;
+        private readonly JsuarezCivilRepository _civilRepository;
+        private JSuarezCivil _civil;
 
-        private string _casado;
-        private string _hijos;
-
-        public string Casado
+        public JSuarezCivil Civil
         {
-            get => _casado;
+            get => _civil;
             set
             {
-                _casado = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Hijos
-        {
-            get => _hijos;
-            set
-            {
-                _hijos = value;
+                _civil = value;
                 OnPropertyChanged();
             }
         }
@@ -39,35 +27,21 @@ namespace JhoelSuarezPruebaProg2.ViewModels
 
         public CivilViewModel()
         {
-            _jsuarezCivilRepository = new JsuarezCivilRepository();
-
-            // Cargar la información inicial del estado civil
-            var civil = _jsuarezCivilRepository.DevulveInfoCivil("");
-            Casado = civil.Casado;
-            Hijos = civil.Hijos;
-
-            // Asociar el comando
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarez.db3");
+            _civilRepository = new JsuarezCivilRepository(dbPath);
+            Civil = new JSuarezCivil(); // Inicializar un nuevo civil
             GuardarCommand = new Command(OnGuardar);
         }
 
         private async void OnGuardar()
         {
-            JSuarezCivil civil = new JSuarezCivil
-            {
-                Casado = Casado,
-                Hijos = Hijos
-            };
-
-            bool guardado = _jsuarezCivilRepository.CrearCivil(civil);
+            Debug.WriteLine($"OnGuardar: Civil = {Civil.Casado}, {Civil.Hijos}");
+            bool guardado = _civilRepository.CrearCivil(Civil);
 
             if (guardado)
-            {
-                await Application.Current.MainPage.DisplayAlert("Alerta", "Guardado correctamente", "OK");
-            }
+                await Application.Current.MainPage.DisplayAlert("Éxito", "Datos civiles guardados correctamente", "OK");
             else
-            {
-                await Application.Current.MainPage.DisplayAlert("Alerta", "Error al guardar el estado civil", "OK");
-            }
+                await Application.Current.MainPage.DisplayAlert("Error", "No se pudieron guardar los datos civiles", "OK");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

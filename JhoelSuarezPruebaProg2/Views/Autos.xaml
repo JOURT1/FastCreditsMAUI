@@ -10,19 +10,25 @@
         <vm:AutosViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout>
-        <Label Text="Ingrese la Marca" Style="{StaticResource SubtitleLabel}" />
-        <Editor Text="{Binding Marca}" Placeholder="Ingrese la Marca" Style="{StaticResource InputEditor}" />
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Carro.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
 
-        <Label Text="Ingrese el Modelo" Style="{StaticResource SubtitleLabel}" />
-        <Editor Text="{Binding Modelo}" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEditor}" />
+            <Label Text="Ingrese la Marca" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Carro.Marca}" Placeholder="Ingrese la Marca" Style="{StaticResource InputEntry}" />
 
-        <Label Text="Ingrese el año" Style="{StaticResource SubtitleLabel}" />
-        <Editor Text="{Binding Año}" Placeholder="Ingrese el año" Style="{StaticResource InputEditor}" />
+            <Label Text="Ingrese el Modelo" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Carro.Modelo}" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEntry}" />
 
-        <Label Text="Ingrese el precio" Style="{StaticResource SubtitleLabel}" />
-        <Editor Text="{Binding Precio}" Placeholder="Ingrese el precio" Style="{StaticResource InputEditor}" />
+            <Label Text="Ingrese el año" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Carro.Año}" Placeholder="Ingrese el año" Style="{StaticResource InputEntry}" />
 
-        <Button x:Name="JSuarez_btn_Recargar" Text="Guardar" Style="{StaticResource PrimaryButton}" Clicked="JSuarez_btn_Recargar_Clicked" />
-    </VerticalStackLayout>
+            <Label Text="Ingrese el precio" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Carro.Precio}" Placeholder="Ingrese el precio" Style="{StaticResource InputEntry}" />
+
+            <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
+

@@ -12,27 +12,27 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Ingrese el número de Cédula" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese el nombre completo" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Nombre}" Placeholder="Ingrese Nombre" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Nombre}" Placeholder="Ingrese Nombre" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese la edad" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Edad}" Placeholder="Ingrese Edad" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Edad}" Placeholder="Ingrese Edad" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese fecha de nacimiento" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Fecha_Nacimiento}" Placeholder="Ingrese fecha de nacimiento" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Fecha_Nacimiento}" Placeholder="Ingrese fecha de nacimiento" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese Género" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Genero}" Placeholder="Ingrese el Género" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Genero}" Placeholder="Ingrese el Género" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese Teléfono" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Telefono}" Placeholder="Ingrese el Teléfono" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Telefono}" Placeholder="Ingrese el Teléfono" Style="{StaticResource InputEntry}" />
 
             <Label Text="Ingrese Correo" Style="{StaticResource SubtitleLabel}" />
-            <Editor Text="{Binding Usuario.Correo}" Placeholder="Ingrese el Correo" Style="{StaticResource InputEditor}" />
+            <Entry Text="{Binding Usuario.Correo}" Placeholder="Ingrese el Correo" Style="{StaticResource InputEntry}" />
 
-            <Button Text="Recargar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
+            <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

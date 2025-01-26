@@ -10,14 +10,18 @@
         <vm:CivilViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout>
-        <Label Text="Ingrese si es Casado" Style="{StaticResource SubtitleLabel}" />
-        <Editor Text="{Binding Casado}" Placeholder="Ingrese si es Casado" Style="{StaticResource InputEditor}" />
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Civil.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
 
-        <Label Text="Ingrese cantidad de Hijos" Style="{StaticResource SubtitleLabel}" />
-        <Editor Text="{Binding Hijos}" Placeholder="Ingrese cantidad de Hijos" Style="{StaticResource InputEditor}" />
+            <Label Text="Ingrese si es Casado" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Civil.Casado}" Placeholder="Ingrese si es Casado" Style="{StaticResource InputEntry}" />
 
-        <!-- Utilizamos el binding del comando en vez del evento Clicked -->
-        <Button Text="Guardar" Style="{StaticResource PrimaryButton}" Command="{Binding GuardarCommand}" />
-    </VerticalStackLayout>
+            <Label Text="Ingrese cantidad de Hijos" Style="{StaticResource SubtitleLabel}" />
+            <Entry Text="{Binding Civil.Hijos}" Placeholder="Ingrese cantidad de Hijos" Style="{StaticResource InputEntry}" />
+
+            <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

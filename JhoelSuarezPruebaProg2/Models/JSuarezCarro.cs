@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
 
 namespace JhoelSuarezPruebaProg2.Models
 {
     public class JSuarezCarro
     {
-        //AUTOS
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Año { get; set; }
         public string Precio { get; set; }
+        public string Cedula { get; set; } // Nueva propiedad para vincular con el usuario
     }
 }
+

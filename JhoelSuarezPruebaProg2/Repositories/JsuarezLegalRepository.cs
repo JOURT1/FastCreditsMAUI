@@ -1,63 +1,116 @@
 ﻿using JhoelSuarezPruebaProg2.Interfaces;
 using JhoelSuarezPruebaProg2.Models;
-using Newtonsoft.Json;
-using System;
+using SQLite;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace JhoelSuarezPruebaProg2.Repositories
 {
     public class JsuarezLegalRepository : IJSLegalRepo
     {
-        public string _fileName = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarezlegal.txt");
-        //IMPORTANTE: Vamos a Nugget y descargamos NewtonSoftJson
-        public bool ActualizarLegal(JSuarezLegal legal)
+        private readonly SQLiteConnection _database;
+
+        public JsuarezLegalRepository(string dbPath)
         {
-            throw new NotImplementedException();
+            _database = new SQLiteConnection(dbPath);
+            _database.CreateTable<JSuarezLegal>();
         }
 
         public bool CrearLegal(JSuarezLegal legal)
         {
             try
             {
-                string json_data = JsonConvert.SerializeObject(legal);
-                File.WriteAllText(_fileName, json_data);
-                return true;
+                int result = _database.Insert(legal);
+                Debug.WriteLine($"CrearLegal: Insert result = {result}");
+                return result > 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine($"CrearLegal: Exception = {ex.Message}");
+                return false;
             }
         }
 
-        public JSuarezLegal DevulveInfoLegal(string Denuncias)
+        public bool ActualizarLegal(JSuarezLegal legal)
         {
-            JSuarezLegal jSuarezLegal = new JSuarezLegal();
             try
             {
-                //File.AppendAllText para que no sobre escriba y siga escribiendo
-                if (File.Exists(_fileName))
-                {
-                    string json_data = File.ReadAllText(_fileName);
-                    jSuarezLegal = JsonConvert.DeserializeObject<JSuarezLegal>(json_data);
-                }
+                int result = _database.Update(legal);
+                Debug.WriteLine($"ActualizarLegal: Update result = {result}");
+                return result > 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine($"ActualizarLegal: Exception = {ex.Message}");
+                return false;
             }
-            return jSuarezLegal;
-        }
-        public IEnumerable<JSuarezLegal> DevulveListadoLegal()
-        {
-            throw new NotImplementedException();
         }
 
         public bool EliminarLegal(string Denuncias)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var legal = _database.Table<JSuarezLegal>().FirstOrDefault(l => l.Denuncias == Denuncias);
+                if (legal != null)
+                {
+                    int result = _database.Delete(legal);
+                    Debug.WriteLine($"EliminarLegal: Delete result = {result}");
+                    return result > 0;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"EliminarLegal: Exception = {ex.Message}");
+                return false;
+            }
+        }
+
+        public IEnumerable<JSuarezLegal> DevulveListadoLegal()
+        {
+            try
+            {
+                var legales = _database.Table<JSuarezLegal>().ToList();
+                Debug.WriteLine($"DevulveListadoLegal: Count = {legales.Count}");
+                return legales;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveListadoLegal: Exception = {ex.Message}");
+                return Enumerable.Empty<JSuarezLegal>();
+            }
+        }
+
+        public JSuarezLegal DevulveInfoLegal(string cedula)
+        {
+            try
+            {
+                var legal = _database.Table<JSuarezLegal>().FirstOrDefault(l => l.Cedula == cedula);
+                Debug.WriteLine($"DevulveInfoLegal: Legal = {legal?.Denuncias}");
+                return legal;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveInfoLegal: Exception = {ex.Message}");
+                return null;
+            }
+        }
+
+        public IEnumerable<JSuarezLegal> DevulveLegalesPorCedula(string cedula)
+        {
+            try
+            {
+                var legales = _database.Table<JSuarezLegal>().Where(l => l.Cedula == cedula).ToList();
+                Debug.WriteLine($"DevulveLegalesPorCedula: Count = {legales.Count}");
+                return legales;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveLegalesPorCedula: Exception = {ex.Message}");
+                return Enumerable.Empty<JSuarezLegal>();
+            }
         }
     }
 }
+

@@ -1,63 +1,116 @@
 ﻿using JhoelSuarezPruebaProg2.Interfaces;
 using JhoelSuarezPruebaProg2.Models;
-using Newtonsoft.Json;
-using System;
+using SQLite;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace JhoelSuarezPruebaProg2.Repositories
 {
     public class JsuarezCarroRepository : IJSCarroRepo
     {
-        public string _fileName = Path.Combine(FileSystem.AppDataDirectory, "JhoelSuarezcarro.txt");
-        //IMPORTANTE: Vamos a Nugget y descargamos NewtonSoftJson
-        public bool ActualizarCarro(JSuarezCarro carro)
+        private readonly SQLiteConnection _database;
+
+        public JsuarezCarroRepository(string dbPath)
         {
-            throw new NotImplementedException();
+            _database = new SQLiteConnection(dbPath);
+            _database.CreateTable<JSuarezCarro>();
         }
 
         public bool CrearCarro(JSuarezCarro carro)
         {
             try
             {
-                string json_data = JsonConvert.SerializeObject(carro);
-                File.WriteAllText(_fileName, json_data);
-                return true;
+                int result = _database.Insert(carro);
+                Debug.WriteLine($"CrearCarro: Insert result = {result}");
+                return result > 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine($"CrearCarro: Exception = {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool ActualizarCarro(JSuarezCarro carro)
+        {
+            try
+            {
+                int result = _database.Update(carro);
+                Debug.WriteLine($"ActualizarCarro: Update result = {result}");
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"ActualizarCarro: Exception = {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EliminarCarro(string Marca)
+        {
+            try
+            {
+                var carro = _database.Table<JSuarezCarro>().FirstOrDefault(c => c.Marca == Marca);
+                if (carro != null)
+                {
+                    int result = _database.Delete(carro);
+                    Debug.WriteLine($"EliminarCarro: Delete result = {result}");
+                    return result > 0;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"EliminarCarro: Exception = {ex.Message}");
+                return false;
+            }
+        }
+
+        public IEnumerable<JSuarezCarro> DevulveListadoCarro()
+        {
+            try
+            {
+                var carros = _database.Table<JSuarezCarro>().ToList();
+                Debug.WriteLine($"DevulveListadoCarro: Count = {carros.Count}");
+                return carros;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveListadoCarro: Exception = {ex.Message}");
+                return Enumerable.Empty<JSuarezCarro>();
             }
         }
 
         public JSuarezCarro DevulveInfoCarro(string Marca)
         {
-            JSuarezCarro jSuarezCarro = new JSuarezCarro();
             try
             {
-                //File.AppendAllText para que no sobre escriba y siga escribiendo
-                if (File.Exists(_fileName))
-                {
-                    string json_data = File.ReadAllText(_fileName);
-                    jSuarezCarro = JsonConvert.DeserializeObject<JSuarezCarro>(json_data);
-                }
+                var carro = _database.Table<JSuarezCarro>().FirstOrDefault(c => c.Marca == Marca);
+                Debug.WriteLine($"DevulveInfoCarro: Carro = {carro?.Marca}");
+                return carro;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine($"DevulveInfoCarro: Exception = {ex.Message}");
+                return null;
             }
-            return jSuarezCarro;
-        }
-        public IEnumerable<JSuarezCarro> DevulveListadoCarro()
-        {
-            throw new NotImplementedException();
         }
 
-        public bool EliminarCarro(string Marca)
+        public IEnumerable<JSuarezCarro> DevulveCarrosPorCedula(string cedula)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var carros = _database.Table<JSuarezCarro>().Where(c => c.Cedula == cedula).ToList();
+                Debug.WriteLine($"DevulveCarrosPorCedula: Count = {carros.Count}");
+                return carros;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"DevulveCarrosPorCedula: Exception = {ex.Message}");
+                return Enumerable.Empty<JSuarezCarro>();
+            }
         }
     }
 }
+

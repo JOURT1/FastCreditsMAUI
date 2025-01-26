@@ -12,9 +12,9 @@ public partial class JSuarezPag2 : ContentPage
         var datosCombinados = new JSuarezDatosCombinados
         {
             Usuario = usuario,
-            Carro = carro,
-            Civil = civil,
-            Legal = legal
+            
+            
+           
         };
 
         BindingContext = datosCombinados;

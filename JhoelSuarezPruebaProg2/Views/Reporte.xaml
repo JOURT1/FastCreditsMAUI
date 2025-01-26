@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:JhoelSuarezPruebaProg2.ViewModels"
+             x:Class="JhoelSuarezPruebaProg2.Views.Reporte"
+             Title="Generar Reporte"
+             BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <vm:ReporteViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
+            <Entry Placeholder="Cédula" x:Name="CedulaEntry" Style="{StaticResource InputEntry}" />
+
+            <Button Text="Generar Reporte" Command="{Binding GenerarReporteCommand}" CommandParameter="{Binding Text, Source={x:Reference CedulaEntry}}" Style="{StaticResource PrimaryButton}" />
+
+            <Label Text="Datos del Usuario" Style="{StaticResource SubtitleLabel}" />
+            <VerticalStackLayout>
+                <Label Text="Nombre:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Nombre}" Style="{StaticResource BodyLabel}" />
+
+                <Label Text="Cédula:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Cedula}" Style="{StaticResource BodyLabel}" />
+
+                <Label Text="Edad:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Edad}" Style="{StaticResource BodyLabel}" />
+
+                <Label Text="Fecha de Nacimiento:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Fecha_Nacimiento}" Style="{StaticResource BodyLabel}" />
+
+                <Label Text="Género:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Genero}" Style="{StaticResource BodyLabel}" />
+
+                <Label Text="Teléfono:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Telefono}" Style="{StaticResource BodyLabel}" />
+
+                <Label Text="Correo:" Style="{StaticResource BodyLabel}" />
+                <Label Text="{Binding DatosCombinados.Usuario.Correo}" Style="{StaticResource BodyLabel}" />
+            </VerticalStackLayout>
+
+            <Label Text="Datos del Auto" Style="{StaticResource SubtitleLabel}" />
+            <CollectionView ItemsSource="{Binding DatosCombinados.Carros}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="Marca:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Marca}" Style="{StaticResource BodyLabel}" />
+
+                            <Label Text="Modelo:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Modelo}" Style="{StaticResource BodyLabel}" />
+
+                            <Label Text="Año:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Año}" Style="{StaticResource BodyLabel}" />
+
+                            <Label Text="Precio:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Precio}" Style="{StaticResource BodyLabel}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Datos Civiles" Style="{StaticResource SubtitleLabel}" />
+            <CollectionView ItemsSource="{Binding DatosCombinados.Civiles}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="Casado:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Casado}" Style="{StaticResource BodyLabel}" />
+
+                            <Label Text="Hijos:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Hijos}" Style="{StaticResource BodyLabel}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Datos Legales" Style="{StaticResource SubtitleLabel}" />
+            <CollectionView ItemsSource="{Binding DatosCombinados.Legales}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="Denuncias:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Denuncias}" Style="{StaticResource BodyLabel}" />
+
+                            <Label Text="Antecedentes Penales:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Antecedentes_Penales}" Style="{StaticResource BodyLabel}" />
+
+                            <Label Text="Fraudes:" Style="{StaticResource BodyLabel}" />
+                            <Label Text="{Binding Fraudes}" Style="{StaticResource BodyLabel}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+
+
