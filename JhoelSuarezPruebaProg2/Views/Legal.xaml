@@ -13,16 +13,16 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Legal.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Legal.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Label Text="Ingrese si tiene Denuncias" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Legal.Denuncias}" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Legal.Denuncias}" Placeholder="Ingrese si tiene Denuncias" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese si tiene Antecedentes Penales" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Legal.Antecedentes_Penales}" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Legal.Antecedentes_Penales}" Placeholder="Ingrese si tiene Antecedentes Penales" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Label Text="Ingrese si tiene Fraudes" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Legal.Fraudes}" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Legal.Fraudes}" Placeholder="Ingrese si tiene Fraudes" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
         </VerticalStackLayout>

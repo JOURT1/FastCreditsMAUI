@@ -12,7 +12,7 @@ namespace JhoelSuarezPruebaProg2.Models
         public string Cedula { get; set; }
         public string Nombre { get; set; }
         public int Edad { get; set; }
-        public DateTime Fecha_Nacimiento { get; set; } //ff
+        public DateTime Fecha_Nacimiento { get; set; } 
         public string Genero { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }

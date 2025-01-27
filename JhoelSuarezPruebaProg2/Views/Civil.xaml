@@ -13,13 +13,13 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Civil.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Civil.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese si es Casado" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Civil.Casado}" Placeholder="Ingrese si es Casado" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Civil.Casado}" Placeholder="Ingrese si es Casado" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese cantidad de Hijos" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Civil.Hijos}" Placeholder="Ingrese cantidad de Hijos" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Civil.Hijos}" Placeholder="Ingrese cantidad de Hijos" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
         </VerticalStackLayout>

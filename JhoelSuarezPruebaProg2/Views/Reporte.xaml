@@ -13,7 +13,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
-            <Entry Placeholder="Cédula" x:Name="CedulaEntry" Style="{StaticResource InputEntry}" />
+            <Entry Placeholder="Cédula" x:Name="CedulaEntry" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Button Text="Generar Reporte" Command="{Binding GenerarReporteCommand}" CommandParameter="{Binding Text, Source={x:Reference CedulaEntry}}" Style="{StaticResource PrimaryButton}" />
 

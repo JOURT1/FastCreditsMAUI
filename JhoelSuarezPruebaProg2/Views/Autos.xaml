@@ -13,19 +13,19 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Ingrese la Cédula del Usuario" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Carro.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Carro.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese la Marca" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Carro.Marca}" Placeholder="Ingrese la Marca" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Carro.Marca}" Placeholder="Ingrese la Marca" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese el Modelo" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Carro.Modelo}" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Carro.Modelo}" Placeholder="Ingrese el Modelo" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese el año" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Carro.Año}" Placeholder="Ingrese el año" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Carro.Año}" Placeholder="Ingrese el año" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Label Text="Ingrese el precio" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Carro.Precio}" Placeholder="Ingrese el precio" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Carro.Precio}" Placeholder="Ingrese el precio" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
         </VerticalStackLayout>

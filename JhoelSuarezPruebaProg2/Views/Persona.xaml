@@ -12,25 +12,25 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
             <Label Text="Ingrese el número de Cédula" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Cedula}" Placeholder="Ingrese Cédula" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese el nombre completo" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Nombre}" Placeholder="Ingrese Nombre" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Nombre}" Placeholder="Ingrese Nombre" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Label Text="Ingrese la edad" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Edad}" Placeholder="Ingrese Edad" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Edad}" Placeholder="Ingrese Edad" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Label Text="Ingrese fecha de nacimiento" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Fecha_Nacimiento}" Placeholder="Ingrese fecha de nacimiento" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Fecha_Nacimiento}" Placeholder="Ingrese fecha de nacimiento" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese Género" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Genero}" Placeholder="Ingrese el Género" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Genero}" Placeholder="Ingrese el Género" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese Teléfono" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Telefono}" Placeholder="Ingrese el Teléfono" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Telefono}" Placeholder="Ingrese el Teléfono" Style="{StaticResource InputEntry}" TextColor="White" />
 
             <Label Text="Ingrese Correo" Style="{StaticResource SubtitleLabel}" />
-            <Entry Text="{Binding Usuario.Correo}" Placeholder="Ingrese el Correo" Style="{StaticResource InputEntry}" />
+            <Entry Text="{Binding Usuario.Correo}" Placeholder="Ingrese el Correo" Style="{StaticResource InputEntry}" TextColor="White"/>
 
             <Button Text="Guardar" Command="{Binding GuardarCommand}" Style="{StaticResource PrimaryButton}" />
         </VerticalStackLayout>
